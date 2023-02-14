@@ -1,0 +1,2 @@
+class InstrumentCategory < ApplicationRecord
+end
