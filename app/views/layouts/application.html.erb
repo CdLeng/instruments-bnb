@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
+    <h3>Hi <%= current_user.email %></h3>
+    <p>Don't worry. This Hi email can be taken out on line 17 & 18 in the file: app>views>layouts>application.html.erb</p>
   </body>
 </html>
