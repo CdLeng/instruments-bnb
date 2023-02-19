@@ -1,0 +1,9 @@
+<h1>Book the instrument</h1>
+
+<%= form_with model: @booking do |form| %>>
+  <%= form.label :date_start %>
+  <%= form.date_field :date_start %>
+  <%= form.label :date_end %>
+  <%= form.date_field :date_end %>
+  <%= form.submit %>
+<% end %>
