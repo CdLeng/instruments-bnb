@@ -73,7 +73,7 @@ for i in (1..5)
 end
 
 puts "#{users_created} users were created (total: #{User.all.count})"
-puts "#{instrument_categories_created} categories were (total: #{InstrumentCategory.all.count})"
-puts "#{instruments_created} instruments were (total: #{Instrument.all.count})"
-puts "#{reviews_created} reviews were (total: #{Review.all.count})"
-puts "#{bookings_created} bookings were (total: #{Booking.all.count})"
+puts "#{instrument_categories_created} categories were created (total: #{InstrumentCategory.all.count})"
+puts "#{instruments_created} instruments were created (total: #{Instrument.all.count})"
+puts "#{reviews_created} reviews were created (total: #{Review.all.count})"
+puts "#{bookings_created} bookings were created (total: #{Booking.all.count})"
