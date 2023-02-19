@@ -46,22 +46,22 @@ for i in (1..5)
                 rev.updated_at = Faker::Date.backward(days: 14)
                 rev.rate = Faker::Number.between(from: 1, to: 5)
                 rev.content = Faker::Restaurant.review[0, 400]
-
-                for i in (1..2)
-                  booking = Booking.new do |book|
-                    bookings_created += 1
-                    book.user = u
-                    book.date_start = Faker::Date.backward(days: 8)
-                    book.date_end = Faker::Date.backward(days: 4)
-                    book.total_price = Faker::Number.between(from: 80, to: 300)
-                    book.instrument = inst
-                    book.created_at = Faker::Date.backward(days: 14)
-                    book.updated_at = Faker::Date.backward(days: 14)
-                  end
-                  booking.save!
-                end
               end
               review.save!
+            end
+
+            for i in (1..2)
+              booking = Booking.new do |book|
+                bookings_created += 1
+                book.user = u
+                book.date_start = Faker::Date.backward(days: 8)
+                book.date_end = Faker::Date.backward(days: 4)
+                book.total_price = Faker::Number.between(from: 80, to: 300)
+                book.instrument = inst
+                book.created_at = Faker::Date.backward(days: 14)
+                book.updated_at = Faker::Date.backward(days: 14)
+              end
+              booking.save!
             end
           end
           instrument.save!
