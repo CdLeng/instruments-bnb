@@ -78,3 +78,6 @@ end
 
 # added the devise gem for authentication
 gem "devise"
+
+# use for db record seeding
+gem 'faker'
