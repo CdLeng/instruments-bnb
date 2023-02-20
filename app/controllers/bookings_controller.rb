@@ -10,6 +10,12 @@ class BookingsController < ApplicationController
     redirect_to instruments_path
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to instruments_path, status: :see_other
+  end
+
   private
 
   def booking_params
