@@ -1,5 +1,5 @@
 <ul>
   <% @instruments.each do |instrument| %>
-    <li><%= instrument.name %></li>
+    <li><%= link_to "#{instrument.name}", instrument_path(instrument) %></li>
   <% end %>
 </ul>
