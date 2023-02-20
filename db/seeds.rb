@@ -34,7 +34,7 @@ for i in (1..5)
             instruments_created += 1
             inst.instrument_category = instcat
             inst.user = u
-            inst.type = Faker::Music.instrument
+            inst.instrument_type = Faker::Music.instrument
             inst.name = Faker::Lorem.sentence(word_count: 3)
             inst.description = Faker::Lorem.paragraph
             inst.price = Faker::Number.between(from: 50, to: 300)
