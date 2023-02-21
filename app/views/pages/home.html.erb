@@ -1,8 +1,135 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      InstrumentsBnB
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<p><%= link_to "Click here to view all instruments", instruments_path  %></p>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Instruments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bookings</a>
+          </li>
+          <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://previews.123rf.com/images/metelsky/metelsky1809/metelsky180900233/109815470-man-avatar-profile-male-face-icon-vector-illustration-.jpg" />
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+            </div>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
+      </ul>
+    </div>
+  </div>
+</div>
 
-<p><%= link_to "Click here to sign in", new_user_session_path %></p>
 
-<p><%= link_to "Click here to register", new_user_registration_path %></p>
+<div class="banner banner-colorB" >
+  <div class="container first">
+    <h1>Rent musical instruments <br>anywhere!</h1>
+    <div class="instruments-link"><%= link_to "Sign in", new_user_session_path %></div>
+  </div>
+</div>
+
+<div class="banner banner-colorA">
+  <div class="container about">
+    <h1 >About us</h1>
+    <p>Our goal is to help you make music anywhere and anytime!</p>
+    <p>InstrumentsBnB is an online platform that connects lovers of music! Here you can put your instrument for rent or you can rent any instrument available. </p>
+  </div>
+</div>
+
+<div class="banner banner-colorB">
+  <div class="container dark">
+    <h1>A lot of categories<br> to choose from!</h1>
+    <div class="category-container">
+
+      <div class="category-card" style="background-color: #FE8D6C">
+        <p>Guitar</p>
+      </div>
+
+      <div class="category-card" style="background-color: #47B8AF">
+        <p>Piano</p>
+      </div>
+
+      <div class="category-card" style="background-color: #FEDB60">
+        <p>Saxophone</p>
+      </div>
+
+      <div class="category-card" style="background-color: #83C7B0">
+        <p>Drums</p>
+      </div>
+
+            <div class="category-card" style="background-color: #88d881">
+        <p>Violin</p>
+      </div>
+
+      <div class="category-card" style="background-color: #ffb167">
+        <p>Trumpet</p>
+      </div>
+
+      <div class="category-card" style="background-color: #d8d8d8">
+        <p>Ukelele</p>
+      </div>
+
+      <div class="category-card" style="background-color: #e5a0ee">
+        <p>Flute</p>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="banner banner-colorA">
+  <div class="container instruments">
+    <h1>Checkout the instruments!</h1>
+    <div>
+      <div class="card-product">
+        <img src="https://cdn11.bigcommerce.com/s-n9l2n2/images/stencil/350x350/products/91748/546612/DSC_5034__04554.1675353156.jpg?c=2" />
+        <div class="card-product-infos">
+          <h2>Guitar</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+
+      <div class="card-product">
+        <img src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/501788/1467363/main-image" />
+        <div class="card-product-infos">
+          <h2>Piano</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+
+      <div class="card-product">
+        <img src="https://cdn.britannica.com/27/176327-050-67702AB2/Violin.jpg" />
+        <div class="card-product-infos">
+          <h2>Violin</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="instruments-link">
+      <%= link_to "Click here to view all instruments", instruments_path  %>
+    </div>
+  </div>
+</div>
+
+
+<div class="banner banner-colorB" >
+  <div class="container dark">
+    <div class="sign-in"><h1><%= link_to "Sign in", new_user_session_path %></h1></div>
+    <div class="sign-in"><h1><%= link_to "Register", new_user_registration_path %></h1></div>
+  </div>
+</div>
