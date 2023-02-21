@@ -24,6 +24,14 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+.banner-colorA {
+  background-color: whitesmoke;
+}
+
+.banner-colorB {
+  background-color: #272C32;
+}
+
 
 // ------------------------  Button css ---------------------------
 
@@ -188,6 +196,9 @@
   background-color: #359189
 }
 
+.card-product-infos p {
+  color: #272727;
+}
 
 // ----------------------  Sign in and Register styles ----------------
 .sign-in {
