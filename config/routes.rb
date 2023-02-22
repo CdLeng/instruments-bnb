@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "instruments", to: "instruments#index"
   get "instruments/:id", to: "instruments#show", as: :instrument
+  get "instruments/new", to: "instruments#new", as: :new_instrument
   get "/instruments/:id/rent/new", to: "bookings#new", as: :bookings
+  get "/instruments/:id/edit", to: "instruments#edit", as: :edit_instrument
   post "/instruments/:id/rent/new", to: "bookings#create"
-  delete "/booking/:id/cancel", to: "bookings#destroy", as: :destroy
+  post "instruments", to: "instruments#create"
+  patch "instruments/:id", to: "instruments#update"
+  delete "instruments/:id", to: "instruments#destroy", as: :destroy_instrument
+  delete "/booking/:id/cancel", to: "bookings#destroy", as: :destroy_booking
 end
