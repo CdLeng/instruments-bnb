@@ -6,14 +6,20 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
     @booking.save
-    redirect_to instruments_path
+    redirect_to my_bookings_path
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to instruments_path, status: :see_other
+  end
+
+  def show
+    @user = current_user
+    @bookings = Booking.where(user: @user)
   end
 
   private

@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   get "/instruments/:id/rent/new", to: "bookings#new", as: :bookings
   post "/instruments/:id/rent/new", to: "bookings#create"
   delete "/booking/:id/cancel", to: "bookings#destroy", as: :destroy
+  #get "/instruments/:id/rent/show", to: "bookings#show", as: :my_bookings
+  get "/booking/all", to: "bookings#show", as: :my_bookings
+
 end
