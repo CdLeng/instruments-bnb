@@ -1,32 +1,26 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-     <%= link_to root_path, class: "logo" do %>
-      <%= image_tag "music_icon.png" %>
-    <% end %>
+    <a class="navbar-brand" href="#">
+      InstrumentsBnB
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-items">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item active">
-          <%= link_to "Instruments", instruments_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "My instruments", instruments_path, class: "nav-link" if user_signed_in? == true %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Register", new_user_registration_path, class: "nav-link" if user_signed_in? == false %>
-        </li>
-      <ul>
-    </div>
-    <div class="collapse navbar-collapse mx-5" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link navbar-brand" href="#">Instruments</a>
+          </li>
+          <li class="nav-item ">
+            <%# <a class="nav-link" href="#">Bookings</a> %>
+            <%= link_to "My bookings", my_bookings_path, class: "nav-link navbar-brand" %>
+          </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://previews.123rf.com/images/metelsky/metelsky1809/metelsky180900233/109815470-man-avatar-profile-male-face-icon-vector-illustration-.jpg" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
-              <%= link_to "Sign in", new_user_session_path, class: "dropdown-item" if user_signed_in? == false %>
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item" if user_signed_in? == true %>
+              <a class="dropdown-item" href="#">Action</a>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item" %>
             </div>
           </li>
           <!--li class="nav-item"-->

@@ -1,8 +1,14 @@
 <div class="banner banner-colorB" >
   <div class="container first">
     <h1>Rent musical instruments <br>anywhere!</h1>
+
     <div class="instruments-link">
-      <%= link_to "Go to instruments", instruments_path %>
+      <% if !user_signed_in? %>
+        <%= link_to "Sign in", new_user_session_path %>
+        <%= link_to "Register", new_user_registration_path %>
+      <% else %>
+        <p>Welcome <%= current_user.email %>!</p>
+      <% end %>
     </div>
   </div>
 </div>
@@ -92,13 +98,5 @@
     <div class="instruments-link">
       <%= link_to "Click here to view all instruments", instruments_path  %>
     </div>
-  </div>
-</div>
-
-
-<div class="banner banner-colorB" >
-  <div class="container dark">
-    <div class="sign-in"><h1><%= link_to "Sign in", new_user_session_path %></h1></div>
-    <div class="sign-in"><h1><%= link_to "Register", new_user_registration_path %></h1></div>
   </div>
 </div>

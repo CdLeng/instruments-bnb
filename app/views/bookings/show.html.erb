@@ -1,0 +1,11 @@
+<h1>All my bookings:</h1>
+<h2><%= @user.email %></h2>
+
+<ul>
+  <% @bookings.each do |booking|%>
+    <li><%= booking.instrument.name %> | From: <%= booking.date_start %> To: <%= booking.date_end %></li>
+  <% end %>
+</ul>
+
+<%= link_to "See more instruments", instruments_path %>
+<%= link_to "Home", root_path %>
