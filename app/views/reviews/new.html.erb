@@ -1,0 +1,7 @@
+<h1>New review for <%= @instrument.name %></h1>
+
+<%= simple_form_for [@instrument, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rate, collection: 0..5 %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
