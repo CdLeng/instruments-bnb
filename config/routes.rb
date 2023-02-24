@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   #get "/instruments/:id/rent/show", to: "bookings#show", as: :my_bookings
   get "/booking/all", to: "bookings#show", as: :my_bookings
 
+  # get "/instruments/:id/reviews/new", to: "reviews#new", as: :new_review
+  resources :instruments, except: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+  end
 end
