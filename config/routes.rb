@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   get "/instruments/:id/rent/new", to: "bookings#new", as: :bookings
   post "/instruments/:id/rent/new", to: "bookings#create"
   delete "/booking/:id/cancel", to: "bookings#destroy", as: :destroy
-  #get "/instruments/:id/rent/show", to: "bookings#show", as: :my_bookings
   get "/booking/all", to: "bookings#show", as: :my_bookings
 
+  get "/category/all", to: "instrument_categories#index", as: :categories
+  get "category/:id", to: "instrument_categories#show", as: :category
   # get "/instruments/:id/reviews/new", to: "reviews#new", as: :new_review
   resources :instruments, except: [:index, :show] do
     resources :reviews, only: [:new, :create]
