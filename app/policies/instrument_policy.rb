@@ -8,4 +8,8 @@ class InstrumentPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def my_instruments?
+    true
+  end
 end

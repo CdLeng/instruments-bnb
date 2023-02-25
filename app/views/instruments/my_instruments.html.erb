@@ -1,0 +1,7 @@
+<h1><%= @user.email %> <strong>- My instruments:</strong></h1>
+
+<% @instruments.each do |instrument| %>
+  <ul>
+    <li><%= link_to instrument.name, instrument_path(instrument) %></li>
+  </ul>
+<% end %>

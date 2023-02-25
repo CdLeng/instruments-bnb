@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "instruments", to: "instruments#index"
   get "bookings", to: "bookings#index", as: :bookings
+  get "/my_instruments", to: "instruments#my_instruments", as: :my_instruments
   get "instruments/:id", to: "instruments#show", as: :instrument
   get "instruments/new", to: "instruments#new", as: :new_instrument
   get "/instruments/:id/rent/new", to: "bookings#new", as: :new_booking

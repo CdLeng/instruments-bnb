@@ -10,6 +10,11 @@ class InstrumentsController < ApplicationController
     authorize(@instrument)
   end
 
+  def my_instruments
+    @user = current_user
+    authorize @instruments = Instrument.where(user: @user)
+  end
+
   def new
     @instrument = Instrument.new
   end
