@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index]
+  before_action :set_booking, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index new]
 
   def index
     @bookings = policy_scope(Booking)
@@ -7,17 +8,18 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize(@booking)
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    authorize(@booking)
     @booking.save
     redirect_to my_bookings_path
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to instruments_path, status: :see_other
   end
@@ -29,8 +31,11 @@ class BookingsController < ApplicationController
 
   private
 
+  def set_booking
+    @instrument = Instrument.find(params[:id])
+  end
+
   def booking_params
     params.require(:booking).permit(:date_start, :date_end)
   end
-
 end

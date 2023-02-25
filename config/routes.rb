@@ -2,15 +2,17 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get "instruments", to: "instruments#index"
+  get "my-instruments", to: "instruments#my_instruments", as: :my_instruments
   get "bookings", to: "bookings#index", as: :bookings
-  get "instruments/:id", to: "instruments#show", as: :instrument
   get "instruments/new", to: "instruments#new", as: :new_instrument
+  get "instruments/:id", to: "instruments#show", as: :instrument
   get "/instruments/:id/rent/new", to: "bookings#new", as: :new_booking
   get "/instruments/:id/edit", to: "instruments#edit", as: :edit_instrument
   post "/instruments/:id/rent/new", to: "bookings#create"
   post "instruments", to: "instruments#create"
   patch "instruments/:id", to: "instruments#update"
-  delete "instruments/:id", to: "instruments#destroy", as: :destroy_instrument
+  # delete "instruments/:id", to: "instruments#destroy", as: :destroy_instrument
+  # delete "my-instruments", to: "instruments#destroy", as: :destroy_instrument
   delete "/booking/:id/cancel", to: "bookings#destroy", as: :destroy_booking
   get "/booking/all", to: "bookings#show", as: :my_bookings
   get "/instruments/:id/reviews/new", to: "reviews#new", as: :new_review

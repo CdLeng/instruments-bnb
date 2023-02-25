@@ -1,6 +1,6 @@
 <h2><%= @instrument.name %></h2>
 
-<p><%= link_to "Click here to book this instrument", bookings_path(@instrument)%></p>
+<p><%= link_to "Click here to book this instrument", new_booking_path(@instrument)%></p>
 
 <p><%= link_to "Click here to add a review for this instrument", new_instrument_review_path(@instrument)%></p>
 
