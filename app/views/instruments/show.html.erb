@@ -9,6 +9,8 @@
 <ul class="list-group">
   <% @instrument.reviews.each do |review| %>
     <li><%= "⭐️" * review.rate %></li>
+    <li><%= review.created_at.strftime("%d/%m/%Y") %></li>
     <li><%= review.content %></li>
+    <li></li>
   <% end %>
 </ul>
