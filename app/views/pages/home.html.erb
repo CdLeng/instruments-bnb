@@ -24,9 +24,16 @@
 <div class="banner banner-colorB">
   <div class="container dark">
     <h1>A lot of categories<br> to choose from!</h1>
+
     <div class="category-container">
 
-      <div class="category-card" style="background-color: #FE8D6C">
+      <% @categories.sample(12).each do |category| %>
+        <div class="category-card" style="background-color: #FE8D6C">
+          <p><%= link_to category.category, category_path(category) %></p>
+        </div>
+      <% end %>
+
+      <%# <div class="category-card" style="background-color: #FE8D6C">
         <p>Guitar</p>
       </div>
 
@@ -57,10 +64,13 @@
       <div class="category-card" style="background-color: #e5a0ee">
         <p>Flute</p>
       </div>
-
+ %>
 
     </div>
   </div>
+  <div class="instruments-link">
+      <%= link_to "all categories", categories_path %>
+</div>
 </div>
 
 

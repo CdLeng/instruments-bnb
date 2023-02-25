@@ -1,21 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-
-
-
   resources :instruments do
     resources :bookings, only: [:new, :create]
     resources :reviews
   end
   resources :bookings, only: [:destroy]
 
-  get "/booking/all", to: "bookings#show", as: :my_bookings
-
-
-
-
-
+  get "/booking/all", to: "bookings#all", as: :my_bookings
+  get "my-instruments", to: "instruments#my_instruments", as: :my_instruments
+  get "/category/all", to: "instrument_categories#index", as: :categories
+  get "category/:id", to: "instrument_categories#show", as: :category
 
   # get "instruments", to: "instruments#index"
   # get "bookings", to: "bookings#index", as: :bookings
@@ -32,4 +27,4 @@ Rails.application.routes.draw do
   # get "/instruments/:id/reviews/new", to: "reviews#new", as: :new_review
   # resources :instruments, except: [:index, :show] do
   #   resources :reviews, only: [:new, :create]
-  end
+end

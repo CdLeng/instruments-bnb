@@ -1,0 +1,10 @@
+<h1>Category: <%= @category.category %></h1>
+
+<% @all_instruments_category.each do |instrument| %>
+  <ul>
+    <li><%= link_to "#{instrument.name}", instrument_path(instrument) %></li>
+  </ul>
+<% end %>
+
+<%= link_to "More categories", categories_path %>
+<%= link_to "Home", root_path %>
