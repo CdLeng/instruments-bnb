@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
 
+
   resources :instruments do
     resources :bookings, only: [:new, :create]
     resources :reviews
   end
   resources :bookings, only: [:destroy]
 
-
-
   get "/booking/all", to: "bookings#show", as: :my_bookings
+
 
 
 
