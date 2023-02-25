@@ -81,3 +81,5 @@ gem "devise"
 
 # use for db record seeding
 gem 'faker'
+
+gem "pundit", "~> 2.3"
