@@ -4,9 +4,9 @@
 
     <div class="instruments-link">
       <% if !user_signed_in? %>
-        <%= link_to "Sign in", new_user_session_path %>
         <%= link_to "Register", new_user_registration_path %>
       <% else %>
+        <%= link_to "See instruments", instruments_path %>
         <p>Welcome <%= current_user.email %>!</p>
       <% end %>
     </div>
