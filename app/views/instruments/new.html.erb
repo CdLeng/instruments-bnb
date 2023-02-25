@@ -1,0 +1,13 @@
+<div class="container my-5">
+  <h1>Create a new instrument</h1>
+  <div class="row col-6">
+      <%= simple_form_for @instrument do |f| %>
+        <%= f.input :name %>
+        <%= f.association :instrument_category, label_method: :category, value_method: :id, include_blank: false %>
+        <%= f.input :price, as: :float %>
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.card-instrument {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+}
+
+.card-instrument img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-instrument h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-instrument p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-instrument .card-instrument-infos {
+  padding: 16px;
+}
