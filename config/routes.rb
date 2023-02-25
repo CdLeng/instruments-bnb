@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :instruments, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
+    resources :reviews
   end
   resources :bookings, only: [:destroy]
 
@@ -32,4 +33,3 @@ Rails.application.routes.draw do
   # resources :instruments, except: [:index, :show] do
   #   resources :reviews, only: [:new, :create]
   end
-end
