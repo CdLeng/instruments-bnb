@@ -10,23 +10,29 @@
           <li class="nav-item active">
             <%= link_to "All instruments", instruments_path, class: "nav-link navbar-brand" %>
           </li>
+          <li class="nav-item active">
+            <%= link_to "Categories", categories_path, class: "nav-link navbar-brand" %>
+          </li>
           <% if user_signed_in? == true  %>
             <li class="nav-item active">
               <%= link_to "Add instrument", new_instrument_path, class: "nav-link navbar-brand" %>
             </li>
+          <% end %>
+          <% if user_signed_in? == false %>
             <li class="nav-item ">
-              <%= link_to "My instruments", my_instruments_path, class: "nav-link navbar-brand" %>
-            </li>
-            <li class="nav-item ">
-              <%= link_to "My bookings", my_bookings_path, class: "nav-link navbar-brand" %>
+                <%= link_to "Login", new_user_session_path, class: "nav-link navbar-brand" %>
+              </li>
+          <% end %>
+          <% if user_signed_in? == true  %>
+            <li class="nav-item dropdown">
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://previews.123rf.com/images/metelsky/metelsky1809/metelsky180900233/109815470-man-avatar-profile-male-face-icon-vector-illustration-.jpg" />
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "My instruments", my_instruments_path, class: "dropdown-item" %>
+                <%= link_to "My bookings", my_bookings_path, class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item" %>
+              </div>
             </li>
           <% end %>
-          <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://previews.123rf.com/images/metelsky/metelsky1809/metelsky180900233/109815470-man-avatar-profile-male-face-icon-vector-illustration-.jpg" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item" %>
-            </div>
-          </li>
           <!--li class="nav-item"-->
           <!--/li-->
       </ul>
