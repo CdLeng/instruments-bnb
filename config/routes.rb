@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get "/booking/all", to: "bookings#show", as: :my_bookings
   get "my-instruments", to: "instruments#my_instruments", as: :my_instruments
+  get "/category/all", to: "instrument_categories#index", as: :categories
+  get "category/:id", to: "instrument_categories#show", as: :category
 
   # get "instruments", to: "instruments#index"
   # get "bookings", to: "bookings#index", as: :bookings
