@@ -6,11 +6,9 @@
 
 <p><strong>Reviews</strong></p>
 
-
-<%#
 <ul class="list-group">
-  <% @instrument.review.each do |review| %>
-    <%# <li><%= "⭐️" "* #{review.rate}" %></li>
-    <%# <li><%= review.content %></li>
-  <%# <% end %>
-<%# </ul> %>
+  <% @instrument.reviews.each do |review| %>
+    <li><%= "⭐️" * review.rate %></li>
+    <li><%= review.content %></li>
+  <% end %>
+</ul>
