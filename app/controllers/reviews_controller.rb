@@ -4,12 +4,14 @@ class ReviewsController < ApplicationController
   def new
     @instrument = Instrument.find(params[:instrument_id])
     @review = Review.new
+    authorize(@review)
   end
 
   def create
-    @review.user = current_user
     @review = Review.new(review_params)
+    @review.user = current_user
     @review.instrument = @instrument
+    authorize(@review)
     @review.save
     redirect_to instrument_path(set_instrument)
   end
