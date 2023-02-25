@@ -8,18 +8,19 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @instrument = Instrument.find(params[:instrument_id])
     authorize(@booking)
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.instrument = @instrument
+    @booking.instrument = Instrument.find(params[:instrument_id])
     @booking.user = current_user
     authorize(@booking)
     if @booking.save!
-      redirect_to booking_path
+      redirect_to root_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -36,7 +37,7 @@ class BookingsController < ApplicationController
   private
 
   def set_booking
-    @instrument = Instrument.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
