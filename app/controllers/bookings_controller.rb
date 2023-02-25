@@ -1,9 +1,11 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: %i[index new]
+  before_action :set_booking, only: %i[edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[new]
 
-  def index
-    @bookings = policy_scope(Booking)
+  def all
+    @user = current_user
+    @bookings = Booking.where(user: current_user)
+    authorize(@bookings)
   end
 
   def new
@@ -18,20 +20,16 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize(@booking)
     if @booking.save!
-      redirect_to root_path
+      redirect_to my_bookings_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def show
-    @user = current_user
-    @bookings = Booking.where(user: current_user)
-  end
-
   def destroy
     @booking.destroy
     redirect_to booking_path, status: :see_other
+    authorize(@booking)
   end
 
   private

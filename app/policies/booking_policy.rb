@@ -5,7 +5,7 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-  def show?
+  def all?
     true
   end
 
@@ -15,5 +15,9 @@ class BookingPolicy < ApplicationPolicy
 
   def create?
     true
+  end
+
+  def destroy?
+    record.user == user
   end
 end

@@ -3,7 +3,7 @@ class InstrumentsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show my_instruments]
 
   def index
-    @instruments = policy_scope(Instrument)
+    @instruments = policy_scope(Instrument.where.not(user: current_user))
   end
 
   def my_instruments

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:destroy]
 
-  get "/booking/all", to: "bookings#show", as: :my_bookings
+  get "/booking/all", to: "bookings#all", as: :my_bookings
   get "my-instruments", to: "instruments#my_instruments", as: :my_instruments
   get "/category/all", to: "instrument_categories#index", as: :categories
   get "category/:id", to: "instrument_categories#show", as: :category
