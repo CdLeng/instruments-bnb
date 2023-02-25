@@ -1,5 +1,14 @@
 class BookingsController < ApplicationController
+<<<<<<< HEAD
   before_action :set_instrument, only: [:new, :create]
+=======
+  skip_before_action :authenticate_user!, only: %i[index]
+
+  def index
+    @bookings = policy_scope(Booking)
+  end
+
+>>>>>>> master
   def new
     @booking = Booking.new
   end
