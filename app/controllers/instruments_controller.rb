@@ -32,7 +32,7 @@ class InstrumentsController < ApplicationController
     authorize(@instrument)
 
     if @instrument.save
-      redirect_to instrument_path(@instrument), notice: "Instrument was succesfully created."
+      redirect_to my_instruments_path, notice: "Instrument was succesfully created."
     else
       render :new, status: :unprocessable_entity
     end
