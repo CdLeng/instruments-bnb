@@ -8,6 +8,14 @@ class BookingsController < ApplicationController
     authorize(@bookings)
   end
 
+  def show
+    authorize(@booking)
+  end
+
+  def edit
+    authorize(@booking)
+  end
+
   def new
     @booking = Booking.new
     @instrument = Instrument.find(params[:instrument_id])
@@ -26,6 +34,17 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    authorize(@booking)
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    if @booking.update(booking_params)
+      redirect_to my_bookings_path, notice: "The booking has been updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @booking.destroy
     redirect_to booking_path, status: :see_other
@@ -39,7 +58,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date_start, :date_end)
+    params.require(:booking).permit(:date_start, :date_end, :id)
   end
 
   def set_instrument

@@ -7,6 +7,7 @@
       <%= link_to "Cancel",
       booking_path(booking),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%= link_to "Edit", edit_booking_path(booking) %>
     </li>
   <% end %>
 </ul>
