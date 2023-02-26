@@ -83,3 +83,5 @@ gem "devise"
 gem 'faker'
 
 gem "pundit", "~> 2.3"
+
+gem "pg_search"
