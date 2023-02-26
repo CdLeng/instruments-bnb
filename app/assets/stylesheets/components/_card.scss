@@ -1,11 +1,17 @@
 .card-instrument {
   overflow: hidden;
-  height: 120px;
+  height: 130px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   padding-left: 0px;
+  border-radius: 10px;
+  transition: all ease-in-out 0.3s;
+}
+
+.card-instrument:hover {
+  transform: scale(1.05);
 }
 
 .card-instrument img {
@@ -30,4 +36,25 @@
 
 .card-instrument .card-instrument-infos {
   padding: 16px;
+  padding-top: 30px;
+
+}
+.card-instrument-infos a {
+  text-decoration: none;
+  color: #292929;
+}
+
+.card-instrument-infos h5 {
+  font-weight: bold;
+}
+
+.card-instrument-infos h5:hover {
+  color: #47B8AF;
+}
+
+#price {
+  text-align: right;
+  font-weight: bold;
+  color:  #47B8AF;
+  font-size: 14px;
 }
