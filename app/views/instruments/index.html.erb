@@ -1,6 +1,9 @@
-<div class="container">
-  <h2>All instruments</h2>
-  <div class="row col-6 my-3">
+<div class="title-container">
+  <h2>Tons of instruments to choose from!</h2>
+</div>
+
+<div>
+    <div class="cards-layout">
       <% @instruments.each do |instrument| %>
         <div class="card-instrument my-3">
           <img src="https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" />
@@ -9,12 +12,11 @@
               <h5><%= instrument.name %></h5>
             <% end %>
             <p><%= instrument.description %></p>
-          </div>
-          <div class="card-instrument-options">
-            <p>€<%= instrument.price %></p>
+            <p id="price">€<%= instrument.price %> / day</p>
           </div>
         </div>
       <% end %>
     </ul>
   </div>
 </div>
+i
