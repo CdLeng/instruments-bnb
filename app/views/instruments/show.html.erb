@@ -1,16 +1,39 @@
-<h2><%= @instrument.name %></h2>
 
-<p><%= link_to "Click here to book this instrument", new_instrument_booking_path(@instrument)%></p>
-<p><%= link_to "Click here to add a review for this instrument", new_instrument_review_path(@instrument)%></p>
+<div class="big-card">
+  <div class="big-card-title">
+    <h2><%= @instrument.name %></h2>
+  </div>
+
+  <div class="div-img">
+    <img class="i-img" src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/130178/17090408_800.jpg" alt="instrument-img">
+  </div>
+  <div class="div-inst-description">
+    <p><strong>Description: </strong><%= @instrument.description %></p>
+    <p><strong>Category: </strong><%= @instrument.instrument_category.category %></p>
+  </div>
+
+  <div class="big-card-links">
+    <%= link_to "Book", new_instrument_booking_path(@instrument), class: "book"%>
+  </div>
 
 
-<p><strong>Reviews</strong></p>
+  <div class="div-reviews">
+    <h2><strong>Reviews</strong></h2>
 
-<ul class="list-group">
-  <% @instrument.reviews.each do |review| %>
-    <li><%= "⭐️" * review.rate %></li>
-    <li><%= review.created_at.strftime("%d/%m/%Y") %></li>
-    <li><%= review.content %></li>
-    <li></li>
-  <% end %>
-</ul>
+    <%# <ul class="list-group"> %>
+      <% @instrument.reviews.each do |review| %>
+        <div class="individual-review">
+          <div class="rating-box">
+            <p>Rating: <%= "⭐️" * review.rate %></p>
+            <p><%= review.created_at.strftime("%d/%m/%Y") %></p>
+          </div>
+          <i><%= review.content %></i>
+        </div>
+      <% end %>
+    <%# </ul> %>
+        <%= link_to "Add a review", new_instrument_review_path(@instrument), class: "book review-btn"%>
+
+  </div>
+
+
+</div>
