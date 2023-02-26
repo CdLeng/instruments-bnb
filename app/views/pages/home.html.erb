@@ -1,5 +1,11 @@
-<div class="banner banner-colorB" >
+<div class="banner banner-hero" >
   <div class="container first">
+  <div class="instruments-link">
+    <% if user_signed_in? %>
+      <p id="user-name">Welcome <%= current_user.email %>!</p>
+    <% end %>
+  </div>
+
     <h1>Rent musical instruments <br>anywhere!</h1>
 
     <div class="instruments-link">
@@ -7,31 +13,29 @@
         <%= link_to "Register", new_user_registration_path %>
       <% else %>
         <%= link_to "See instruments", instruments_path %>
-        <p>Welcome <%= current_user.email %>!</p>
       <% end %>
     </div>
   </div>
 </div>
 
-<div class="banner banner-colorA">
-  <div class="container about">
-    <h1 >About us</h1>
-    <p>Our goal is to help you make music anywhere and anytime!</p>
-    <p>InstrumentsBnB is an online platform that connects lovers of music! Here you can put your instrument for rent or you can rent any instrument available. </p>
-  </div>
-</div>
 
-<div class="banner banner-colorB">
+<div class="banner banner-categories">
   <div class="container dark">
-    <h1>A lot of categories<br> to choose from!</h1>
+    <h1>A lot of categories to choose from!</h1>
 
     <div class="category-container">
 
-      <% @categories.sample(12).each do |category| %>
-        <div class="category-card" style="background-color: #FE8D6C">
-          <p><%= link_to category.category, category_path(category) %></p>
+      <% @categories.first(11).each do |category| %>
+        <div >
+          <p><%= link_to category.category, category_path(category), class: "category-card" %></p>
         </div>
       <% end %>
+
+      <div class="pink">
+          <p><%= link_to "See more", categories_path, class: "category-card" %></p>
+      </div>
+
+
 
       <%# <div class="category-card" style="background-color: #FE8D6C">
         <p>Guitar</p>
@@ -63,50 +67,62 @@
 
       <div class="category-card" style="background-color: #e5a0ee">
         <p>Flute</p>
-      </div>
- %>
+      </div> %>
 
     </div>
+
   </div>
-  <div class="instruments-link">
-      <%= link_to "all categories", categories_path %>
+
+
 </div>
-</div>
 
 
 
-<div class="banner banner-colorA">
+<div class="banner banner-instruments">
   <div class="container instruments">
     <h1>Checkout the instruments!</h1>
-    <div>
+    <div class="c">
       <div class="card-product">
         <img src="https://cdn11.bigcommerce.com/s-n9l2n2/images/stencil/350x350/products/91748/546612/DSC_5034__04554.1675353156.jpg?c=2" />
         <div class="card-product-infos">
-          <h2>Guitar</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <h2>Taylor 611e LTD</h2>
+          <p>Guitar</p>
+          <%# <p>Lorem ipsum dolor sit amet.</p> %>
         </div>
       </div>
 
       <div class="card-product">
         <img src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/501788/1467363/main-image" />
         <div class="card-product-infos">
-          <h2>Piano</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <h2>Yamaha S3X</h2>
+          <p>Piano</p>
+          <%# <p>Lorem ipsum dolor sit amet.</p> %>
         </div>
       </div>
 
       <div class="card-product">
         <img src="https://cdn.britannica.com/27/176327-050-67702AB2/Violin.jpg" />
         <div class="card-product-infos">
-          <h2>Violin</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <h2>Cremona SV-75</h2>
+          <p>Violin</p>
+          <%# <p>Lorem ipsum dolor sit amet.</p> %>
         </div>
       </div>
 
 
     </div>
     <div class="instruments-link">
-      <%= link_to "Click here to view all instruments", instruments_path  %>
+      <%= link_to "See instruments", instruments_path  %>
     </div>
   </div>
+</div>
+
+
+<div class="banner" id="banner-about">
+  <div class="container about">
+    <h1 >About us</h1>
+    <p>Our goal is to help you make music anywhere and anytime!</p>
+    <p>InstrumentsBnB is an online platform that connects lovers of music! Here you can put your instrument for rent or you can rent any instrument available. </p>
+  </div>
+  <div class="about-img"></div>
 </div>
