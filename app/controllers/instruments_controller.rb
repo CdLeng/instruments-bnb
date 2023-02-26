@@ -4,6 +4,11 @@ class InstrumentsController < ApplicationController
 
   def index
     @instruments = policy_scope(Instrument.where.not(user: current_user))
+    if params[:query].present?
+      @instruments = Instrument.search_by_name_and_description(params[:query])
+    else
+      @instruments = Instrument.all
+    end
   end
 
   def my_instruments
