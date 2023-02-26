@@ -6,11 +6,11 @@
 
 <p><strong>Reviews</strong></p>
 
-
-<%#
 <ul class="list-group">
-  <% @instrument.review.each do |review| %>
-    <%# <li><%= "⭐️" "* #{review.rate}" %></li>
-    <%# <li><%= review.content %></li>
-  <%# <% end %>
-<%# </ul> %>
+  <% @instrument.reviews.each do |review| %>
+    <li><%= "⭐️" * review.rate %></li>
+    <li><%= review.created_at.strftime("%d/%m/%Y") %></li>
+    <li><%= review.content %></li>
+    <li></li>
+  <% end %>
+</ul>
