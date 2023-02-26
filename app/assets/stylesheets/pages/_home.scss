@@ -5,7 +5,6 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
 }
 
 .banner h1 {
@@ -24,13 +23,24 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.banner-colorA {
-  background-color: whitesmoke;
+.banner-instruments {
+  background-color: #292929;
 }
 
-.banner-colorB {
+
+.banner-hero {
+  margin-top: 30px;
   background-color: #272C32;
+  background-image: url("https://images.unsplash.com/photo-1501962679900-bea61483313b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80");
+  background-position: center;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  height: 550px;
 }
+
+
 
 
 // ------------------------  Button css ---------------------------
@@ -59,6 +69,7 @@
 
 .btn-flat:hover {
   background-color: #47B8AF;
+  background-color: rgb(216, 68, 93);
   color: white;
 }
 
@@ -79,27 +90,49 @@
 
 // ------------------------   Categories css  -----------------------
 
+#banner-about {
+  background-color: whitesmoke;
+  padding: 20px;
+  height: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.about-img {
+  width: 50%;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1481886756534-97af88ccb438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80");
+  // background-position: bottom;
+  object-fit: contain;
+  background-position: center;
+  border-radius: 5px;
+
+}
+
 .about {
   text-align: center;
-  padding: 0 200px;
-}
-.about-title {
-  width: 700px;
+  padding: 0 10px;
+  width: 50%;
+
 }
 .about p {
   color: #272727;
   font-size: 16px;
 }
 .about h1 {
-  color: #363c44;
+  color: #292929;
 }
 
 .dark {
   color: white;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-
+  padding: 50px;
+}
+.dark h1 {
+  color:  rgb(216, 68, 93);
 }
 
 .container h1 {
@@ -107,50 +140,73 @@
 }
 
 .category-container {
+  margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  row-gap: 10px;
-  column-gap: 10px;
+  row-gap: 20px;
+  column-gap: 20px;
   text-align: center;
 }
 
+
 .category-card {
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
+  width: 212px;
+  height: 43px;
+  border-radius: 21px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #272727;
 }
 
-.category-card p {
+.category-container a {
   font-size: 18px;
   margin: 0;
+}
+
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 .music-icon {
   width: 50px;
 }
 
-// ---------------------  Instruments section styles -------------------
-
-.instruments h1 {
-  color: #272727;
-  margin-bottom: 70px;
+.banner-categories .instruments-link {
+  text-align: center;
 }
 
-.instruments > div {
+// ---------------------  Instruments section styles -------------------
+.instruments {
+  padding: 60px 30px;
+}
+
+.instruments h1 {
+  color: whitesmoke;
+  margin-bottom: 70px;
+  text-align: right;
+}
+
+.instruments > .c {
   display: flex;
   justify-content: space-between;
 }
 
 .card-product {
   overflow: hidden;
+  width: 320px;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 70px rgba(0,0,0,0.8);
   display: flex;
   align-items: center;
+  transition: all ease-in 0.3s;
+  border-radius: 5px;
+}
+.card-product:hover {
+  transform: scale(1.05);
 }
 
 .card-product img {
@@ -184,10 +240,11 @@
 .instruments-link a {
   text-decoration: none;
   background-color: #47B8AF;
+  background-color: rgb(226, 76, 101);
   color: white;
   font-weight: bold;
   padding: 12px 25px;
-  border-radius: 5px;
+  border-radius: 30px;
   margin-right: 10px;
 }
 
@@ -202,6 +259,13 @@
 
 .card-product-infos p {
   color: #272727;
+}
+.all-categories-link {
+  margin-top: 0;
+}
+
+.instruments .instruments-link {
+  text-align: right;
 }
 
 // ----------------------  Sign in and Register styles ----------------
@@ -225,4 +289,29 @@
 .sign-in a {
   text-decoration: none;
   color: white;
+}
+
+
+#user-name {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 100px;
+  margin-top: 20px;
+}
+
+.category-card:hover {
+  background-color: #47B8AF;
+  color: #292929;
+}
+
+.pink a {
+  background-color: rgb(226, 76, 101);
+
+}
+.banner-categories {
+  background-color: #292929;
+  background-color: whitesmoke;
+
+  height: 420px;
 }
