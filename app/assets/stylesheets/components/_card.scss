@@ -59,15 +59,14 @@
   font-size: 14px;
 }
 
-// -------------------------------------------
 .big-card {
   width: 700px;
   margin: 100px auto;
   border-radius: 20px;
   background-color: white;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
-
 }
+
 .big-card-title {
   width: 100%;
   height: 150px;
@@ -79,9 +78,9 @@
   align-items: center;
   border-radius: 30px;
 }
+
 .big-card-title h2 {
   font-weight: bold;
-
 }
 
 .div-img {
@@ -108,6 +107,7 @@
   text-align: center;
   font-weight: bold;
 }
+
 .big-card-links {
   display: flex;
   justify-content: space-evenly;
@@ -115,10 +115,12 @@
   margin-top: 0px;
   margin-bottom: 50px;
 }
+
 .big-card-links > a:hover {
   background-color: #308a82;
   color: white
 }
+
 .div-reviews {
   display: flex;
   align-items: center;
@@ -130,6 +132,7 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
 .div-reviews h2 {
   color: #292929;
 }
@@ -137,6 +140,7 @@
 .individual-review {
   border-bottom: 1px solid #93d4cec2;
   padding: 20px;
+  width: 100%;
 }
 
 .rating-box {
@@ -157,14 +161,11 @@
   color: white
 }
 
-//-------------------------------------
-
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .btn-submit {
   background-color: #47B8AF;
@@ -174,21 +175,34 @@
   border-radius: 5px;
   font-weight: bold;
 }
+
 .btn-submit:hover {
   background-color:#308a82;
   color: white;
 }
+
 .white {
   background-color: white;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
+
 .white > h2 {
   font-weight: bold;
   color: #47B8AF;
   text-align: center;
   margin: 30px 0px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #93d4cec2;
+  padding-bottom: 20px;
+}
+.right {
+  text-align: right;
+  color: #47B8AF;
+  font-weight: bold;
 }
 
 .w-booking {
@@ -210,10 +224,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
 }
-
-
 
 .card-booking-infos h5 > a {
   text-decoration: none;
@@ -227,8 +238,6 @@
 .card-booking-infos h5 {
   font-weight: bold;
 }
-
-
 
 .card-booking {
   height: 100px;
@@ -244,15 +253,19 @@
 .b {
   background-color: #47B8AF;
 }
+
 .b:hover {
   background-color: #2f8d85;
 }
+
 .b-links a:hover {
   color: white;
 }
+
 .r {
   background-color: darkred;
 }
+
 .r:hover {
   background-color: rgb(104, 2, 2);
 }
