@@ -1,16 +1,28 @@
-<h1>All my bookings: - <%= @user.email %></h1>
+<div class="title-container">
+  <h2>My bookings</h2>
+</div>
 
-<ul>
+
+
+
+<div class="b-center">
   <% @bookings.each do |booking|%>
-    <li>
-      <%= booking.instrument.name %> | From: <%= booking.date_start %> To: <%= booking.date_end %> |
-      <%= link_to "Cancel",
-      booking_path(booking),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      <%= link_to "Edit", edit_booking_path(booking) %>
-    </li>
+    <div class="card-booking my-3 w-booking" >
+      <div class="card-booking-infos">
+        <div>
+          <h5><%= link_to booking.instrument.name, instrument_path(booking.instrument) %></h5>
+          <p><strong>From: </strong><%= booking.date_start %> <strong>To: </strong><%= booking.date_end %></p>
+        </div>
+        <div class="b-links">
+          <%= link_to "Edit", edit_booking_path(booking), class: "book b" %>
+          <%= link_to "Cancel", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"book r"%>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
 
-<%= link_to "See more instruments", instruments_path %>
-<%= link_to "Home", root_path %>
+<div class="my-5 b-links">
+<%= link_to "See more instruments", instruments_path, class: "book b" %>
+<%= link_to "Home", root_path, class: "book b" %>
+</div>
+</div>
