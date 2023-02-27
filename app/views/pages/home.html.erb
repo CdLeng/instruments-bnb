@@ -1,22 +1,26 @@
 <div class="banner banner-hero" >
   <div class="container first">
-  <div class="instruments-link">
-    <% if user_signed_in? %>
-      <p id="user-name">Welcome <%= current_user.email %>!</p>
-    <% end %>
-  </div>
 
-    <h1>Rent musical instruments <br>anywhere!</h1>
 
-    <div class="instruments-link">
-      <% if !user_signed_in? %>
-        <%= link_to "Register", new_user_registration_path %>
-      <% else %>
-        <%= link_to "See instruments", instruments_path %>
-      <% end %>
+  <div class="home-banner-content">
+      <div class="instruments-link">
+        <% if user_signed_in? %>
+          <p id="user-name">Welcome <%= current_user.email %>!</p>
+        <% end %>
+      </div>
+      <h1>Rent musical instruments <br>anywhere!</h1>
+
+      <div class="instruments-link">
+        <% if !user_signed_in? %>
+          <%= link_to "Register", new_user_registration_path %>
+        <% else %>
+          <%= link_to "See instruments", instruments_path %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+
 
 
 <div class="banner banner-categories">

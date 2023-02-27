@@ -215,6 +215,7 @@
   align-items: center;
   flex-direction: column;
   min-height: 55vh;
+  margin: 0px 200px;
 }
 
 .card-booking-infos {
@@ -240,7 +241,7 @@
 }
 
 .card-booking {
-  height: 100px;
+  min-height: 100px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -248,6 +249,7 @@
   justify-content: space-between;
   padding-left: 0px;
   border-radius: 10px;
+  padding: 10px 20px;
 }
 
 .b {
@@ -257,6 +259,7 @@
 .b:hover {
   background-color: #2f8d85;
 }
+
 
 .b-links a:hover {
   color: white;
