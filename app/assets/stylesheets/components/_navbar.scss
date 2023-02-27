@@ -2,11 +2,13 @@
   justify-content: space-between;
   background: #272C32;
   background-color: #292929;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   padding-left: 10px;
+  height: 70px;
+  z-index: 100;
 }
 
 .navbar-lewagon .navbar-collapse {
