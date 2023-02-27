@@ -2,6 +2,17 @@
   <h2>Tons of instruments to choose from!</h2>
 </div>
 
+<div class="d-flex justify-content-center my-5">
+  <%= form_with url: instruments_path, method: :get, class: "d-flex col-9" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search our instruments"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
 <div>
     <div class="cards-layout">
       <% @instruments.each do |instrument| %>
