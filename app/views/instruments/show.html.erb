@@ -2,6 +2,7 @@
 <div class="big-card">
   <div class="big-card-title">
     <h2><%= @instrument.name %></h2>
+    <h4> ⭐️ <%= avg_review(@instrument)  %></h4>
   </div>
 
   <div class="div-img">
@@ -18,12 +19,14 @@
 
 
   <div class="div-reviews">
-    <h2><strong>Reviews</strong></h2>
-
-    <%# <ul class="list-group"> %>
+    <div class="review-title">
+      <h2><strong>Reviews</strong> (<%= @instrument.reviews.count %>)</h2>
+      <h4> Average: ⭐️ <%= avg_review(@instrument)  %></h4>
+    </div>
       <% @instrument.reviews.each do |review| %>
         <div class="individual-review">
           <div class="rating-box">
+            <p> <%= review.user.email %></p>
             <p>Rating: <%= "⭐️" * review.rate %></p>
             <p><%= review.created_at.strftime("%d/%m/%Y") %></p>
           </div>

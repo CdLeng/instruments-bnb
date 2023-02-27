@@ -62,10 +62,20 @@ class InstrumentsController < ApplicationController
 
   def set_instrument
     @instrument = Instrument.find(params[:id])
-
   end
 
   def instrument_params
     params.require(:instrument).permit(:name, :address, :price, :description, :instrument_category_id)
   end
+
+  def avg_review(instrument)
+    @avg = 0
+    @count = instrument.reviews.count
+    instrument.reviews.each do |review|
+      @avg += review.rate
+    end
+    @count.positive? ? @avg /= @count : ""
+  end
+
+  helper_method :avg_review
 end
