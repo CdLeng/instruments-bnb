@@ -201,3 +201,68 @@
   color: #47B8AF;
   font-weight: bold;
 }
+// -----------------------------------
+.w-booking {
+  width: 80%;
+}
+.b-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 55vh;
+}
+
+.card-booking-infos {
+  padding: 16px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+}
+
+
+
+.card-booking-infos h5 > a {
+  text-decoration: none;
+  color: #292929;
+}
+
+.card-booking-infos h5 > a:hover {
+  color: #47B8AF;
+}
+
+.card-booking-infos h5 {
+  font-weight: bold;
+}
+
+
+
+.card-booking {
+  height: 100px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0px;
+  border-radius: 10px;
+}
+
+.b {
+  background-color: #47B8AF;
+}
+.b:hover {
+  background-color: #2f8d85;
+}
+.b-links a:hover {
+  color: white;
+}
+.r {
+  background-color: darkred;
+}
+.r:hover {
+  background-color: rgb(104, 2, 2);
+}
