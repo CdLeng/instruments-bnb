@@ -14,6 +14,24 @@ instruments_created = 0
 reviews_created = 0
 bookings_created = 0
 
+categories = ['Electric guitar', 'Classic guitar', 'Bass', 'Piano', 'Saxophone', 'Drums', 'Violin', 'Trumpet', 'Ukelele', 'Flute']
+
+created_categories = []
+categories.each do |category_name|
+  category = InstrumentCategory.new do |instcat|
+    instrument_categories_created += 1
+    instcat.category = category_name
+    instcat.created_at = Faker::Date.backward(days: 14)
+    instcat.updated_at = Faker::Date.backward(days: 14)
+  end
+
+  puts category_name
+  category.save!
+
+
+  created_categories.push(category)
+end
+
 for i in (1..5)
   user = User.new do |u|
     users_created += 1
@@ -21,59 +39,52 @@ for i in (1..5)
     u.password = Faker::Internet.password
     u.created_at = Faker::Date.backward(days: 14)
     u.updated_at = Faker::Date.backward(days: 14)
-
-    for i in (1..2)
-      InstrumentCategory.new do |instcat|
-        instrument_categories_created += 1
-        instcat.category = Faker::Music.instrument
-        instcat.created_at = Faker::Date.backward(days: 14)
-        instcat.updated_at = Faker::Date.backward(days: 14)
-
-        for i in (1..2)
-          instrument = Instrument.new do |inst|
-            instruments_created += 1
-            inst.instrument_category = instcat
-            inst.user = u
-            inst.instrument_type = Faker::Music.instrument
-            inst.name = Faker::Lorem.sentence(word_count: 3)
-            inst.description = Faker::Lorem.paragraph
-            inst.price = Faker::Number.between(from: 50, to: 300)
-            inst.created_at = Faker::Date.backward(days: 14)
-            inst.updated_at = Faker::Date.backward(days: 14)
-
-            for i in (1..2)
-              review = Review.new do |rev|
-                reviews_created += 1
-                rev.user = u
-                rev.instrument = inst
-                rev.created_at = Faker::Date.backward(days: 14)
-                rev.updated_at = Faker::Date.backward(days: 14)
-                rev.rate = Faker::Number.between(from: 1, to: 5)
-                rev.content = Faker::Restaurant.review[0, 400]
-              end
-              review.save!
-            end
-
-            for i in (1..2)
-              booking = Booking.new do |book|
-                bookings_created += 1
-                book.user = u
-                book.date_start = Faker::Date.backward(days: 8)
-                book.date_end = Faker::Date.backward(days: 4)
-                book.total_price = Faker::Number.between(from: 80, to: 300)
-                book.instrument = inst
-                book.created_at = Faker::Date.backward(days: 14)
-                book.updated_at = Faker::Date.backward(days: 14)
-              end
-              booking.save!
-            end
-          end
-          instrument.save!
-        end
-      end
-    end
   end
   user.save!
+
+  for i in (1..2)
+    instrument = Instrument.new do |inst|
+      instruments_created += 1
+      inst.instrument_category = created_categories.sample
+      inst.user = user
+      inst.name = Faker::Lorem.sentence(word_count: 3)
+      inst.description = Faker::Lorem.paragraph
+      inst.address = Faker::Address.full_address
+      inst.price = Faker::Number.between(from: 50, to: 300)
+      inst.created_at = Faker::Date.backward(days: 14)
+      inst.updated_at = Faker::Date.backward(days: 14)
+
+    end
+    instrument.save!
+
+    for i in (1..2)
+      booking = Booking.new do |book|
+        bookings_created += 1
+        book.user = user
+        book.date_start = Faker::Date.backward(days: 8)
+        book.date_end = Faker::Date.backward(days: 4)
+        book.total_price = Faker::Number.between(from: 80, to: 300)
+        book.instrument = instrument
+        book.created_at = Faker::Date.backward(days: 14)
+        book.updated_at = Faker::Date.backward(days: 14)
+      end
+      booking.save!
+    end
+
+    for i in (1..2)
+      review = Review.new do |rev|
+        reviews_created += 1
+        rev.user = user
+        rev.instrument = instrument
+        rev.created_at = Faker::Date.backward(days: 14)
+        rev.updated_at = Faker::Date.backward(days: 14)
+        rev.rate = Faker::Number.between(from: 1, to: 5)
+        rev.content = Faker::Restaurant.review[0, 400]
+      end
+      review.save!
+    end
+  end
+
 end
 
 puts "#{users_created} users were created (total: #{User.all.count})"

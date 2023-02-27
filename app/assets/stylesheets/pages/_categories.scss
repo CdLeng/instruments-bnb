@@ -1,0 +1,27 @@
+.title-cont {
+  text-align: center;
+  padding-top: 70px;
+}
+
+.card {
+  text-align: center;
+  box-shadow:0 10px 16px 0 rgba(0,0,0,0.2)
+}
+
+.card-p {
+  padding: 10px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 350;
+}
+
+.card-p a {
+  color: black;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
