@@ -1,7 +1,6 @@
 <h1>Choose a category:</h1>
 
 <%= link_to "Home", root_path %>
-
 <% @categories.each do |category| %>
   <ul>
     <li><%= link_to category.category, category_path(category) %></li>
