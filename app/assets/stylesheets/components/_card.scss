@@ -75,6 +75,7 @@
   padding: 0;
   display: flex;
   justify-content: center;
+  gap: 40px;
   align-items: center;
   border-radius: 30px;
 }
@@ -135,6 +136,14 @@
 
 .div-reviews h2 {
   color: #292929;
+}
+
+.review-title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
 .individual-review {

@@ -74,7 +74,7 @@ class InstrumentsController < ApplicationController
     instrument.reviews.each do |review|
       @avg += review.rate
     end
-    @count.positive? ? @avg /= @count : "-"
+    @count.positive? ? @avg /= @count : ""
   end
 
   helper_method :avg_review
