@@ -1,14 +1,8 @@
-<div class="title-cont">
-  <h1>Choose a category:</h1>
-</div>
+<h1>Choose a category:</h1>
 
 <%= link_to "Home", root_path %>
-
-<div class = "cards">
-  <% @categories.sort_by(&:category).each do |category| %>
-    <div class = "card">
-      <%= image_tag("#{category.category}.jpg", width: 356, height: 250) %>
-      <p class = "card-p"><%= link_to category.category, category_path(category) %></p>
-    </div>
-  <% end %>
-</div>
+<% @categories.each do |category| %>
+  <ul>
+    <li><%= link_to category.category, category_path(category) %></li>
+  </ul>
+<% end %>
