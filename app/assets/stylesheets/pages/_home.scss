@@ -112,7 +112,7 @@
 .about {
   text-align: center;
   padding: 0 10px;
-  width: 50%;
+  width: 40%;
 
 }
 .about p {
@@ -186,12 +186,13 @@ a {
 .instruments h1 {
   color: whitesmoke;
   margin-bottom: 70px;
-  text-align: right;
+  text-align: center;
 }
 
 .instruments > .c {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 25px;
 }
 
 .card-product {
@@ -235,6 +236,12 @@ a {
 
 .instruments-link {
   margin-top: 50px;
+  display: flex;
+}
+
+.banner.banner-instruments .instruments-link  {
+  display: flex;
+  justify-content: center;
 }
 
 .instruments-link a {
@@ -312,6 +319,5 @@ a {
 .banner-categories {
   background-color: #292929;
   background-color: whitesmoke;
-
   height: 420px;
 }
