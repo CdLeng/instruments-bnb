@@ -14,13 +14,28 @@ instruments_created = 0
 reviews_created = 0
 bookings_created = 0
 
-categories = ['Electric guitar', 'Classic guitar', 'Bass', 'Piano', 'Saxophone', 'Drums', 'Violin', 'Trumpet', 'Ukelele', 'Flute']
+categories = [
+  ['Electric guitar', 'https://images.unsplash.com/photo-1601956349578-c31521587860?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'],
+  ['Classic guitar', 'https://images.unsplash.com/photo-1528553744039-c1dcef33574f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1763&q=80'],
+  ['Bass', 'https://images.unsplash.com/photo-1601148072347-4c63fe45bd33?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'],
+  ['Piano', 'https://images.unsplash.com/photo-1571974599782-87624638275e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2231&q=80'],
+  ['Saxophone', 'https://images.unsplash.com/photo-1629907451365-6731862a0d32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'],
+  ['Drums', 'https://images.unsplash.com/photo-1602939444907-6e688c594a66?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80'],
+  ['Violin', 'https://images.unsplash.com/photo-1460036521480-ff49c08c2781?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dmlvbGlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'],
+  ['Trumpet', 'https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80'],
+  ['Ukelele', 'https://images.unsplash.com/photo-1501731146954-20371d3b1afb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'],
+  ['Flute', 'https://images.unsplash.com/photo-1638317037996-f86e745cf657?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1774&q=80']
+]
 
 created_categories = []
-categories.each do |category_name|
+categories.each do |category_and_image|
+  category_name = category_and_image[0]
+  category_image = category_and_image[1]
+
   category = InstrumentCategory.new do |instcat|
     instrument_categories_created += 1
     instcat.category = category_name
+    instcat.image = category_image
     instcat.created_at = Faker::Date.backward(days: 14)
     instcat.updated_at = Faker::Date.backward(days: 14)
   end

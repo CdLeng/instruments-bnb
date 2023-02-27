@@ -8,6 +8,10 @@
   box-shadow:0 10px 16px 0 rgba(0,0,0,0.2)
 }
 
+.card img {
+  object-fit: cover;
+}
+
 .card-p {
   padding: 10px;
   margin-bottom: 0;
