@@ -10,6 +10,7 @@
           <div class="card-instrument-infos">
             <%= link_to instrument_path(instrument) do %>
               <h5><%= instrument.name %></h5>
+              <p>⭐️ <%= avg_review(instrument) %> </p>
             <% end %>
             <p><%= instrument.description %></p>
             <p id="price">€<%= instrument.price %> / day</p>
