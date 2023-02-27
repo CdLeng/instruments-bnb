@@ -1,10 +1,16 @@
-<div class="container">
-  <h2>New review for <%= @instrument.name %></h2>
-  <div class="row col-6 my-3">
+<div class="title-container">
+  <h2>Add a review!</h2>
+</div>
+
+<div class="container center">
+  <div class="row col-6 my-5 white">
+    <h2>Review</h2>
+    <h5><strong><%= @instrument.name %></strong></h5>
+    <br>
     <%= simple_form_for [@instrument, @review] do |f| %>
-      <%= f.input :content %>
       <%= f.input :rate, collection: 0..5 %>
-      <%= f.submit "Submit review", class: "btn btn-primary" %>
+      <%= f.input :content, label: "Message" %>
+      <%= f.submit "Submit review", class: "btn btn-submit" %>
     <% end %>
   </div>
 </div>
