@@ -1,10 +1,25 @@
 <h1>Category: <%= @category.category %></h1>
 
-<% @all_instruments_category.each do |instrument| %>
-  <ul>
-    <li><%= link_to "#{instrument.name}", instrument_path(instrument) %></li>
-  </ul>
-<% end %>
+<div class="title-container">
+  <h2>Tons of instruments to choose from!</h2>
+</div>
 
+<div>
+    <div class="cards-layout">
+      <% @all_instruments_category.each do |instrument| %>
+        <div class="card-instrument my-3">
+          <img src="https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" />
+          <div class="card-instrument-infos">
+            <%= link_to instrument_path(instrument) do %>
+              <h5><%= instrument.name %></h5>
+            <% end %>
+            <p><%= instrument.description %></p>
+            <p class="price">€<%= instrument.price %> / day</p>
+          </div>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>
 <%= link_to "More categories", categories_path %>
 <%= link_to "Home", root_path %>

@@ -14,7 +14,9 @@
     <%= render "shared/navbar" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
     <%# <h3>Hi <%= current_user.email</h3> %>
     <%= render "shared/footer" %>
   </body>
