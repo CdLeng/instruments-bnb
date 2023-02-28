@@ -1,14 +1,14 @@
-<div class="title-cont">
+<div class="container">
   <h1>Choose a category:</h1>
-</div>
 
-<%= link_to "Home", root_path %>
+  <%= link_to "Home", root_path %>
 
-<div class = "cards">
-  <% @categories.sort_by(&:category).each do |category| %>
-    <div class = "card">
-      <%= image_tag("#{category.image}", width: 356, height: 250) %>
-      <p class = "card-p"><%= link_to category.category, category_path(category) %></p>
-    </div>
-  <% end %>
+  <div class = "cards">
+    <% @categories.sort_by(&:category).each do |category| %>
+      <div class = "card">
+        <%= image_tag("#{category.image}", width: 356, height: 250) %>
+        <p class = "card-p"><%= link_to category.category, category_path(category) %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
